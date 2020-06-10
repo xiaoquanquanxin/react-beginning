@@ -1,17 +1,15 @@
 import React from 'react';
 
-export class SortButton extends React.Component {
-    render(){
-        return (
+export function SortButton(props){
+    return (
+        <div>
             <div>
-                <div>
-                    <button onClick={() => this.props.sortClick(-1)}>前一个</button>
-                </div>
-                <br/>
-                <div>
-                    <button onClick={() => this.props.sortClick(1)}>后一个</button>
-                </div>
+                <button onClick={() => props.sortClick(-1)}>前一步</button>
             </div>
-        );
-    }
+            <br/>
+            <div>
+                <button onClick={() => props.sortClick(1)}>后一步</button>
+            </div>
+        </div>
+    );
 }
