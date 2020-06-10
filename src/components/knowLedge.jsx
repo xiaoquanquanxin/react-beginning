@@ -1,4 +1,5 @@
 import React from 'react';
+import { Greeting } from './greeting';
 
 class ManyTimes extends React.Component {
     constructor(props){
@@ -49,7 +50,7 @@ class ManyTimes extends React.Component {
                 <div>我是state记录的时间，{this.state.time}</div>
                 <button onClick={this.btnClick1}>事件绑定1</button>
                 <button onClick={this.btnClick2}>事件绑定2</button>
-                <button onClick={() => {this.btnClick3('参数', this, window.event);}}>事件绑定3</button>
+                <button onClick={(e) => {this.btnClick3('参数', this, e);}}>事件绑定3</button>
             </div>
         );
     }
@@ -84,6 +85,15 @@ export function KnowLedge(){
                 <li>数据（参数）的传递是自上而下的单向的数据流。且从某一个组件的state派生的数据都只能影响它和它的子组件，就像是瀑布的水流。</li>
             </ol>
             <h3>事件处理</h3>
+            <ol>
+                <li className='question'>绑定事件处理函数需要用箭头函数，这是为什么？</li>
+            </ol>
+            <h3>条件渲染</h3>
+            <ol>
+                <li>条件渲染：<Greeting/></li>
+                <li>不渲染，function return null</li>
+
+            </ol>
         </div>
     );
 }
