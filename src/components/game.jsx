@@ -1,8 +1,8 @@
 import React from 'react';
-import { Board } from './board';
 import { calculateWinner, isGameOverFn } from '../utils/utils';
-import { GameHistory } from './gameHistory';
-import { SortButton } from './sortButton';
+import { Board } from './board.jsx';
+import { GameHistory } from './gameHistory.jsx';
+import { SortButton } from './sortButton.jsx';
 
 export class Game extends React.Component {
     constructor(props){
