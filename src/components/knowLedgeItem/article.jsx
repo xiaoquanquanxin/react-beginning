@@ -99,6 +99,7 @@ export function TheForm(){
     return (
         <KnowLedgeIndex
             title={'表单'}
+            isOpen={true}
             list={[
                 <BasicForm/>
             ]}
