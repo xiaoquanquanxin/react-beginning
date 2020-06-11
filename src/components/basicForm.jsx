@@ -32,5 +32,4 @@ export class BasicForm extends React.Component {
             </div>
         );
     }
-
 }
