@@ -1,5 +1,6 @@
 import React from 'react';
-import './article.css'
+import './article.css';
+
 export class KnowLedgeIndex extends React.Component {
     constructor(props){
         super(props);
@@ -31,7 +32,11 @@ export class KnowLedgeIndex extends React.Component {
         const subTitle = `共计${list.length + questionList.length}条内容`;
         return (
             <div>
-                <h3 className='title' onClick={() => this.handleTitleClick()}>
+                <h3
+                    className='title'
+                    title='可点击'
+                    onClick={() => this.handleTitleClick()}
+                >
                     {title}
                     <sup>{subTitle}</sup></h3>
                 <ol className={this.state.isOpen ? '' : 'hide'}>{list}{questionList}</ol>

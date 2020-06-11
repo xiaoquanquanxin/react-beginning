@@ -1,6 +1,7 @@
 import { KnowLedgeIndex } from './index';
 import React from 'react';
 import { Greeting } from '../greeting';
+import { BasicForm } from '../basicForm';
 
 //  元素渲染
 export function RenderElements(){
@@ -99,7 +100,7 @@ export function TheForm(){
         <KnowLedgeIndex
             title={'表单'}
             list={[
-
+                <BasicForm/>
             ]}
         />
     );
