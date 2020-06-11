@@ -74,3 +74,7 @@ button {
 .question {
     color: orange;
 }
+
+.hide {
+    display: none;
+}

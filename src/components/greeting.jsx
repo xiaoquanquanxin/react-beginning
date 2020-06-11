@@ -1,5 +1,6 @@
 import React from 'react';
-import './greeting.css'
+import './greeting.css';
+
 export class Greeting extends React.Component {
     constructor(props){
         super(props);
@@ -18,11 +19,19 @@ export class Greeting extends React.Component {
         const isLogin = this.state.isLogin;
         if (isLogin) {
             return (
-                <button className={isLogin ? 'red-btn' : 'green-btn'} onClick={() => {this.login(false);}}>登出</button>
+                <div>
+                    {this.props.title}
+                    <button className={isLogin ? 'red-btn' : 'green-btn'} onClick={() => {this.login(false);}}>登出
+                    </button>
+                </div>
             );
         } else {
             return (
-                <button className={isLogin ? 'red-btn' : 'green-btn'} onClick={() => {this.login(true);}}>登录</button>
+                <div>
+                    {this.props.title}
+                    <button className={isLogin ? 'red-btn' : 'green-btn'} onClick={() => {this.login(true);}}>登录
+                    </button>
+                </div>
             );
         }
     }
