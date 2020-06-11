@@ -4,20 +4,18 @@ export class BasicForm extends React.Component {
     constructor(props){
         super(props);
         this.state = { value: '' };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(e){
+    handleChange = (e) => {
         this.setState({
             value: e.target.value
         });
-    }
+    };
 
-    handleSubmit(e){
+    handleSubmit = (e) => {
         console.log(this.state.value);
         e.preventDefault();
-    }
+    };
 
     render(){
         return (
