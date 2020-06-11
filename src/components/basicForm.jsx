@@ -7,6 +7,9 @@ export class BasicForm extends React.Component {
             value: '',
             selectedValue: 'b',
             selectedMultiple: ['a', 'd'],
+            inputF: 'input-1',
+            inputS: 'input-2',
+            inputT: 'input-3',
         };
     }
 
@@ -40,11 +43,35 @@ export class BasicForm extends React.Component {
         }));
     };
 
+    //  批处理多个输入
+    handleChangeBatch = (e) => {
+        const name = e.target.name;
+        let key = null;
+        switch (name) {
+            case 'input-1':
+                key = 'inputF';
+                break;
+            case 'input-2':
+                key = 'inputS';
+                break;
+            case 'input-3':
+                key = 'inputT';
+                break;
+            default:
+                throw new Error(`错误的${name}`);
+        }
+        const value = e.target.value;
+        this.setState(() => ({
+            [key]: value
+        }));
+        console.log(this.state)
+    };
+
     render(){
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <p>input</p>
+                    <p>文本框</p>
                     <label>名字&nbsp;:&emsp;
                         <input
                             type="text"
@@ -77,6 +104,24 @@ export class BasicForm extends React.Component {
                         <option value="c">cccccccc</option>
                         <option value="d">dddddddd</option>
                     </select>
+                    <p>文件上传，通过File Api控制</p>
+                    <input type="file"/>
+                    <p>处理多个输入</p>
+                    <input type="text" name='input-1'
+                           value={this.state.inputF}
+                           onChange={this.handleChangeBatch}
+                    />
+                    <br/>
+                    <input type="text" name='input-2'
+                           value={this.state.inputS}
+                           onChange={this.handleChangeBatch}
+                    />
+                    <br/>
+                    <input type="text" name='input-3'
+                           value={this.state.inputT}
+                           onChange={this.handleChangeBatch}
+                    />
+                    <br/>
                 </form>
             </div>
         );
