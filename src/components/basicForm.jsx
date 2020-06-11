@@ -7,9 +7,8 @@ export class BasicForm extends React.Component {
     }
 
     handleChange = (e) => {
-        this.setState({
-            value: e.target.value
-        });
+        const value = e.target.value;
+        this.setState({ value });
     };
 
     handleSubmit = (e) => {
